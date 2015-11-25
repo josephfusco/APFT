@@ -1,4 +1,1 @@
-<svg version="1.1" id="logo" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 600 600" enable-background="new 0 0 600 600" xml:space="preserve">
-	<polygon fill="#454546" points="395.4,21.3 186.9,21.3 21.3,578.7 276.2,578.7 428.3,132.9"/>
-	<polygon fill="#454546" points="451.5,201.2 324.3,578.7 578.7,578.7"/>
-</svg>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 600"><path fill="#454546" d="M395.4 21.3H186.9L21.3 578.7h254.9l152.1-445.8M451.5 201.2L324.3 578.7h254.4"/></svg>
