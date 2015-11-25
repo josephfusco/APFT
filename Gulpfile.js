@@ -6,7 +6,7 @@ var gulp = require('gulp'),
 	watch = require('gulp-watch');
 
 gulp.task('styles', function () {
-	gulp.src('css/**/*.scss')
+	gulp.src('styles/**/*.scss')
 		.pipe(sass({outputStyle: 'compressed'}))
 		.pipe(rename({suffix: '.min'}))
 		.pipe(gulp.dest('dist'))
@@ -22,7 +22,7 @@ gulp.task('js', function() {
 });
 
 gulp.task('watch', function() {
-	gulp.watch('css/**/*.scss', ['styles']);
+	gulp.watch('styles/**/*.scss', ['styles']);
 	gulp.watch('js/*.js', ['js']);
 });
 
