@@ -1,0 +1,48 @@
+.sidebar {
+	color: $color--dark-gray;
+	position: fixed;
+	top: 0;
+	left: 0;
+	bottom: 0;
+	width: 300px;
+	text-align: left;
+	background-color: $color--sidebar-bg;
+	overflow-y: auto;
+	text-align: center;
+
+	.brand {
+		text-decoration: none;
+		color: inherit;
+		font-weight: bold;
+		.logo {
+			max-width: 160px;
+			height: auto;
+			display: block;
+			margin: 15px auto;
+		}
+		h1 {
+			font-size: 60px;
+			margin: 10px auto;
+		}
+		.description {
+			margin: 0;
+			font-size: 20px;
+		}
+	}
+
+	ul {
+		padding: 0;
+		list-style-type: none;
+		li {
+			padding: 0 15px;
+			a {
+				color: $color--white;
+				text-decoration: none;
+				color: $color--dark-gray;
+				padding: 5px 10px;
+				display: block;
+				font-size: 18px;
+			}
+		}
+	}
+}
