@@ -35,4 +35,4 @@ gulp.task('watch', function() {
 	gulp.watch('data/*.json', ['data']);
 });
 
-gulp.task('default', ['styles', 'js', 'json', 'watch']);
+gulp.task('default', ['styles', 'js', 'data', 'watch']);
