@@ -3,6 +3,7 @@ var gulp = require('gulp'),
 	notify = require("gulp-notify"),
 	uglify = require('gulp-uglify'),
 	rename = require("gulp-rename"),
+	jsonminify = require('gulp-jsonminify'),
 	watch = require('gulp-watch');
 
 gulp.task('styles', function () {
@@ -21,9 +22,17 @@ gulp.task('js', function() {
 	    .pipe(notify("APFT JavaScript is ready."));
 });
 
+gulp.task('data', function () {
+    return gulp.src(['data/*.json'])
+        .pipe(jsonminify())
+        .pipe(rename({suffix: '.min'}))
+        .pipe(gulp.dest('dist'));
+});
+
 gulp.task('watch', function() {
 	gulp.watch('styles/**/*.scss', ['styles']);
 	gulp.watch('js/*.js', ['js']);
+	gulp.watch('data/*.json', ['data']);
 });
 
-gulp.task('default', ['styles', 'js', 'watch']);
+gulp.task('default', ['styles', 'js', 'json', 'watch']);
