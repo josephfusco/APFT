@@ -1,64 +1,89 @@
 <!doctype html>
 <html>
 <head>
+
 <meta charset="utf-8">
 <meta http-equiv="x-ua-compatible" content="ie=edge">
 <title>APFT</title>
-
-<link rel="apple-touch-icon" sizes="57x57" href="img/favicon-114.png">
-<link rel="apple-touch-icon" sizes="114x114" href="img/favicon-114.png">
-<link rel="apple-touch-icon" sizes="72x72" href="img/favicon-144.png">
-<link rel="apple-touch-icon" sizes="144x144" href="img/favicon-144.png">
-
 <meta name="description" content="Army Physical Fitness Test Calculator">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="dist/app.min.css">
 
+<link rel="apple-touch-icon" sizes="57x57" href="assets/img/favicon-114.png">
+<link rel="apple-touch-icon" sizes="114x114" href="assets/img/favicon-114.png">
+<link rel="apple-touch-icon" sizes="72x72" href="assets/img/favicon-144.png">
+<link rel="apple-touch-icon" sizes="144x144" href="assets/img/favicon-144.png">
 <link rel="shortcut icon" href="img/favicon.ico">
-<link rel="icon" sizes="16x16 32x32 64x64" href="img/favicon.ico">
+<link rel="icon" sizes="16x16 32x32 64x64" href="assets/img/favicon.ico">
 <meta name="msapplication-TileColor" content="#FFFFFF">
-<meta name="msapplication-TileImage" content="img/favicon-144.png">
-<meta name="msapplication-config" content="img/browserconfig.xml">
+<meta name="msapplication-TileImage" content="assets/img/favicon-144.png">
+<meta name="msapplication-config" content="assets/img/browserconfig.xml">
 
-<!--[if lt IE 9]>
-    <script src="dist/html5shiv.min.js"></script>
-    <script src="dist/html5shiv-printshiv.min.js"></script>
-<![endif]-->
+<link rel="stylesheet" href="assets/styles/build/app.min.css">
 
 </head>
 <body>
 
-    <div class="sidebar">
+    <header>
+        <div class="container">
 
-        <a href="/" class="brand">
-            <img class="logo" src="img/logo.svg" alt="APFT">
-            <h1>APFT</h1>
-        </a>
-        <p class="site-description">The Army Physical <br>Fitness Test Calculator</p>
+            <nav class="navbar navbar-default">
+                <div class="container-fluid">
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                            <span class="sr-only">Toggle navigation</span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                        <a class="navbar-brand" href="/">APFT</a>
+                    </div>
+                    <div id="navbar" class="navbar-collapse collapse">
+                        <ul class="nav navbar-nav navbar-right">
+                            <li class="active"><a href="/">Calculator</a></li>
+                            <li><a href="#">About</a></li>
+                            <li><a href="#">Terms of Service</a></li>
+                            <li><a href="DA-FORM-705.pdf" target="_blank">DA FORM 705</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
 
-        <nav class="sidebar-menu">
-            <ul>
-                <li><a href="/">Home</a></li>
-                <li><a href="#">About</a></li>
-                <li><a href="#">Terms of Service</a></li>
-                <li><a href="DA-FORM-705.pdf" target="_blank">DA FORM 705</a></li>
-            </ul>
-        </nav>
-
-        <img class="us-flag" src="img/us-flag.svg" alt="United States flag">
-    </div>
+        </div>
+    </header>
 
     <div class="content">
-        <h2>Calculator</h2>
-        <label for="pu_raw">Pushups</label>
-        <input type="text" id="pu_raw">
-        <label for="su_raw">Situps</label>
-        <input type="text" id="su_raw">
-        <label for="tmr_raw">2-Mile Run</label>
-        <input type="text" id="tmr_raw">
-        <button onclick="calculateScore()">Calculate</button>
+        <div class="container">
+
+            <h1>Army Physical Fitness Test</h1>
+
+            <div class="entry-wrapper">
+
+                <div class="entry inline-form">
+                    <div class="form-group">
+
+                    </div>
+                    <div class="form-group">
+                        <label for="pu_raw">Pushups</label>
+                        <input class="form-control" type="text" id="pu_raw">
+                    </div>
+                    <div class="form-group">
+                        <label for="su_raw">Situps</label>
+                        <input class="form-control" type="text" id="su_raw">
+                    </div>
+                    <div class="form-group">
+                        <label for="tmr_raw">2-Mile Run</label>
+                        <input class="form-control" type="text" id="tmr_raw">
+                    </div>
+                </div>
+
+            </div>
+
+            <button class="btn btn-default" onclick="calculateScore()">Calculate</button>
+
+        </div>
     </div>
 
-<script src="dist/app.min.js"></script>
+<script src="assets/js/build/app.min.js"></script>
+
 </body>
 </html>

@@ -1,38 +1,48 @@
-var gulp = require('gulp'),
-	sass = require('gulp-sass'),
-	notify = require("gulp-notify"),
-	uglify = require('gulp-uglify'),
-	rename = require("gulp-rename"),
-	jsonminify = require('gulp-jsonminify'),
-	watch = require('gulp-watch');
+var gulp = require('gulp');
+var concat = require('gulp-concat');
+var	jsonminify = require('gulp-jsonminify');
+var	rename = require("gulp-rename");
+var	sass = require('gulp-sass');
+var	uglify = require('gulp-uglify');
+var	watch = require('gulp-watch');
+
+var paths = {
+    styles: './assets/styles/',
+    js: './assets/js/',
+    json: './data/'
+};
 
 gulp.task('styles', function () {
-	gulp.src('styles/**/*.scss')
-		.pipe(sass({outputStyle: 'compressed'}))
+	gulp.src(paths.styles + '**/*.scss')
+        .pipe(sass({
+            includePaths: ['./bower_components/bootstrap-sass/assets/stylesheets'],
+            outputStyle: 'compressed'
+        }))
 		.pipe(rename({suffix: '.min'}))
-		.pipe(gulp.dest('dist'))
-		.pipe(notify("APFT styles are ready."));
+		.pipe(gulp.dest(paths.styles + 'build'));
 });
 
-gulp.task('js', function() {
-  	gulp.src('js/*.js')
-	    .pipe(uglify())
-	    .pipe(rename({suffix: '.min'}))
-	    .pipe(gulp.dest('dist'))
-	    .pipe(notify("APFT JavaScript is ready."));
+gulp.task('scripts', function() {
+  return gulp.src([
+      paths.js + 'navbar.js',
+      paths.js + 'app.js'
+    ])
+    .pipe(concat({ path: 'app.min.js', stat: { mode: 0666 }}))
+    .pipe(uglify())
+    .pipe(gulp.dest(paths.js + 'build'));
 });
 
 gulp.task('data', function () {
-    return gulp.src(['data/*.json'])
+    return gulp.src([paths.json + '*.json'])
         .pipe(jsonminify())
         .pipe(rename({suffix: '.min'}))
-        .pipe(gulp.dest('dist'));
+        .pipe(gulp.dest(paths.json + '/build'));
 });
 
 gulp.task('watch', function() {
-	gulp.watch('styles/**/*.scss', ['styles']);
-	gulp.watch('js/*.js', ['js']);
-	gulp.watch('data/*.json', ['data']);
+	gulp.watch(paths.styles + '**/*.scss', ['styles']);
+	gulp.watch(paths.js + '*.js', ['scripts']);
+    gulp.watch(paths.json + '*.json', ['data']);
 });
 
-gulp.task('default', ['styles', 'js', 'data', 'watch']);
+gulp.task('default', ['styles', 'scripts', 'watch']);
