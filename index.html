@@ -22,99 +22,92 @@
 
 </head>
 <body>
-
-	<header>
-		<div class="container">
-
-			<nav class="navbar">
-				<div class="container-fluid">
-					<div class="navbar-header">
-						<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-							<span class="sr-only">Toggle navigation</span>
-							<span class="icon-bar"></span>
-							<span class="icon-bar"></span>
-							<span class="icon-bar"></span>
-						</button>
-						<a class="navbar-brand" href="/"><img src="assets/img/logo.svg" alt="">APFT</a>
+	<div id="site-wrap">
+		<header id="header">
+			<div class="container">
+				<nav class="navbar">
+					<div class="container-fluid">
+						<div class="navbar-header">
+							<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+								<span class="sr-only">Toggle navigation</span>
+								<span class="icon-bar"></span>
+								<span class="icon-bar"></span>
+								<span class="icon-bar"></span>
+							</button>
+							<a class="navbar-brand" href="/"><img src="assets/img/logo.svg" alt="">APFT</a>
+						</div>
+						<div id="navbar" class="navbar-collapse collapse">
+							<ul class="nav navbar-nav navbar-right">
+								<li class="active"><a href="/">Calculator</a></li>
+								<li><a href="#">About</a></li>
+								<li><a href="#">Terms of Service</a></li>
+								<li><a href="DA-FORM-705.pdf" target="_blank">DA FORM 705</a></li>
+							</ul>
+						</div>
+					</div><!-- container-fluid -->
+				</nav>
+			</div><!-- container -->
+		</header><!-- header -->
+		<div id="content">
+			<div class="container">
+				<div class="entry-wrapper">
+					<div class="entry inline form-horizontal">
+						<div class="col-sm-3">
+							<div class="form-group">
+								<label for="gender">Gender</label>
+								<input class="form-control" type="text" id="gender">
+							</div>
+						</div>
+						<div class="col-sm-3">
+							<div class="form-group">
+								<label for="age">Age</label>
+								<input class="form-control" type="text" id="age">
+							</div>
+						</div>
+						<div class="col-sm-3">
+							<div class="form-group">
+								<label for="pu_raw">Pushups</label>
+								<input class="form-control" type="text" id="pu_raw">
+							</div>
+						</div>
+						<div class="col-sm-3">
+							<div class="form-group">
+								<label for="su_raw">Situps</label>
+								<input class="form-control" type="text" id="su_raw">
+							</div>
+						</div>
+						<div class="col-sm-3">
+							<div class="form-group">
+								<label for="tmr_raw">2-Mile Run</label>
+								<input class="form-control" type="text" id="tmr_raw">
+							</div>
+						</div>
+						<div class="col-sm-9">
+							<div class="form-group">
+								<label for="score">Score</label>
+								<input class="form-control" type="text" id="score" tabindex="-1" readonly="readonly">
+							</div>
+						</div>
+					</div><!-- entry -->
+				</div><!-- entry-wrapper -->
+				<div class="row">
+					<div class="col-sm-12">
+						<button class="btn btn-default" onclick="addEntry()">+<span class="sr-only"> Add Row</span></button>
+						<button class="btn btn-default" onclick="removeEntry()">-<span class="sr-only"> Remove Row</span></button>
 					</div>
-					<div id="navbar" class="navbar-collapse collapse">
-						<ul class="nav navbar-nav navbar-right">
-							<li class="active"><a href="/">Calculator</a></li>
-							<li><a href="#">About</a></li>
-							<li><a href="#">Terms of Service</a></li>
-							<li><a href="DA-FORM-705.pdf" target="_blank">DA FORM 705</a></li>
-						</ul>
+					<div class="col-sm-12 text-right">
+						<button class="btn btn-default btn-primary" onclick="calculateScore()">Calculate</button>
 					</div>
-				</div>
-			</nav>
-
+				</div><!-- row -->
+			</div><!-- container -->
+	    </div><!-- content -->
+	</div><!-- site-wrap -->
+	<footer id="footer">
+		<div class="container text-center">
+			<img class="us-flag" src="assets/img/us-flag.svg" width="100">
+			<p>Hand Crafted in Rochester, NY by <a href="http://josephfus.co/" target="_blank">Joseph Fusco</a></p>
 		</div>
-	</header>
-
-	<div class="content">
-		<div class="container">
-			<div class="entry-wrapper">
-				<div class="entry inline form-horizontal">
-					<div class="col-sm-3">
-						<div class="form-group">
-							<label for="pu_raw">Gender</label>
-							<input class="form-control" type="text" id="gender">
-						</div>
-					</div>
-					<div class="col-sm-3">
-						<div class="form-group">
-							<label for="pu_raw">Age</label>
-							<input class="form-control" type="text" id="age">
-						</div>
-					</div>
-					<div class="col-sm-3">
-						<div class="form-group">
-							<label for="pu_raw">Pushups</label>
-							<input class="form-control" type="text" id="pu_raw">
-						</div>
-					</div>
-					<div class="col-sm-3">
-						<div class="form-group">
-							<label for="su_raw">Situps</label>
-							<input class="form-control" type="text" id="su_raw">
-						</div>
-					</div>
-					<div class="col-sm-3">
-						<div class="form-group">
-							<label for="tmr_raw">2-Mile Run</label>
-							<input class="form-control" type="text" id="tmr_raw">
-						</div>
-					</div>
-					<div class="col-sm-3">
-						<div class="form-group">
-
-						</div>
-					</div>
-					<div class="col-sm-3">
-						<div class="form-group">
-
-						</div>
-					</div>
-					<div class="col-sm-3">
-						<div class="form-group">
-
-						</div>
-					</div>
-				</div><!-- entry -->
-			</div><!-- entry-wrapper -->
-			<div class="row">
-				<div class="col-sm-12">
-					<button class="btn btn-default" onclick="addEntry()">+<span class="sr-only"> Add Row</span></button>
-					<button class="btn btn-default" onclick="removeEntry()">-<span class="sr-only"> Remove Row</span></button>
-				</div>
-				<div class="col-sm-12 text-right">
-					<button class="btn btn-default btn-primary" onclick="calculateScore()">Calculate</button>
-				</div>
-			</div><!-- row -->
-		</div><!-- container -->
-    </div><!-- content -->
-
-<script src="assets/js/build/app.min.js"></script>
-
+	</footer><!-- footer -->
+	<script src="assets/js/build/app.min.js"></script>
 </body>
 </html>
