@@ -2,11 +2,46 @@
 // Base
 // =============================================================================
 
+html, body {
+	height: 100%;
+	background-color: #DDD;
+	color: #707070;
+}
+
 body {
-    padding-top: 20px;
-    padding-bottom: 20px;
+    padding: 0;
 	font-weight: 300;
 	letter-spacing: 1px;
+}
+
+.content {
+	padding-top: 20px;
+	padding-bottom: 20px;
+}
+
+header {
+	padding-top: 20px;
+	background-color: #707070;
+
+	a {
+		color: $color--dark-gray;
+	}
+
+	.navbar-toggle .icon-bar {
+		background-color: $color--dark-gray;
+	}
+}
+
+.navbar-brand {
+	padding-left: 70px;
+	font-weight: bold;
+
+	img {
+		height: 50px;
+		position: absolute;
+			top: 0px;
+			left: 15px;
+	}
 }
 
 .entry-wrapper {
@@ -14,10 +49,17 @@ body {
 	width: 100%;
 	padding: 5px 15px 0;
 	margin: 0 0 10px;
-	border: 1px solid #EEE;
+	border: 1px solid #ccc;
 	border-radius: 4px;
+	background-color: #FFF;
+}
+
+
+.entry > [class^="col-"] + [class^="col-"] input {
+	border-left: 0;
 }
 
 label {
 	font-weight: 300;
+	color: #999;
 }
