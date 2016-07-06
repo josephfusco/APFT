@@ -12,5 +12,5 @@ function calculateScore() {
 	console.log(getUserPushUps());
 	console.log(getUserSitUps());
 	console.log(getUserRun());
-    alert('Cool Dude');
+	alert('calculateScore()');
 }
