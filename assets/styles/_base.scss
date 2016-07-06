@@ -103,7 +103,7 @@ body {
 	margin: 0 0 10px;
 	border: 1px solid #ccc;
 	border-radius: 4px;
-	background-color: #FFF;
+	background-color: #F4F4F4;
 }
 
 .entry > [class^="col-"] + [class^="col-"] input {
@@ -127,4 +127,8 @@ label {
 
 #footer {
 	height: $sticky-footer-height;
+}
+
+.btn {
+	transition: all .15s ease;
 }
