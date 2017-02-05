@@ -1,113 +1,102 @@
-<!doctype html>
+<!DOCTYPE html>
 <html>
-<head>
-
-<meta charset="utf-8">
-<meta http-equiv="x-ua-compatible" content="ie=edge">
-<title>APFT</title>
-<meta name="description" content="Army Physical Fitness Test Calculator">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-
-<link rel="apple-touch-icon" sizes="57x57" href="assets/img/favicon-114.png">
-<link rel="apple-touch-icon" sizes="114x114" href="assets/img/favicon-114.png">
-<link rel="apple-touch-icon" sizes="72x72" href="assets/img/favicon-144.png">
-<link rel="apple-touch-icon" sizes="144x144" href="assets/img/favicon-144.png">
-<link rel="shortcut icon" href="img/favicon.ico">
-<link rel="icon" sizes="16x16 32x32 64x64" href="assets/img/favicon.ico">
-<meta name="msapplication-TileColor" content="#FFFFFF">
-<meta name="msapplication-TileImage" content="assets/img/favicon-144.png">
-<meta name="msapplication-config" content="assets/img/browserconfig.xml">
-
-<link rel="stylesheet" href="assets/styles/build/app.min.css">
-
-</head>
-<body>
-	<div id="site-wrap">
-		<header id="header">
+	<head>
+		<meta charset="utf-8">
+		<title>APFT Calculator</title>
+		<meta name="description" content="Army Physical Fitness Test Calculator">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="apple-touch-icon" sizes="57x57" href="assets/img/favicon-114.png">
+		<link rel="apple-touch-icon" sizes="114x114" href="assets/img/favicon-114.png">
+		<link rel="apple-touch-icon" sizes="72x72" href="assets/img/favicon-144.png">
+		<link rel="apple-touch-icon" sizes="144x144" href="assets/img/favicon-144.png">
+		<link rel="shortcut icon" href="img/favicon.ico">
+		<link rel="icon" sizes="16x16 32x32 64x64" href="assets/img/favicon.ico">
+		<meta name="msapplication-TileColor" content="#FFFFFF">
+		<meta name="msapplication-TileImage" content="assets/img/favicon-144.png">
+		<meta name="msapplication-config" content="assets/img/browserconfig.xml">
+		<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+		<link href="assets/styles/app.css" rel="stylesheet">
+	</head>
+	<body>
+		<header class="header">
 			<div class="container">
-				<nav class="navbar">
-					<div class="container-fluid">
-						<div class="navbar-header">
-							<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-								<span class="sr-only">Toggle navigation</span>
-								<span class="icon-bar"></span>
-								<span class="icon-bar"></span>
-								<span class="icon-bar"></span>
-							</button>
-							<a class="navbar-brand" href="/"><img src="assets/img/logo.svg" alt="">APFT</a>
-						</div>
-						<div id="navbar" class="navbar-collapse collapse">
-							<ul class="nav navbar-nav navbar-right">
-								<li class="active"><a href="/">Calculator</a></li>
-								<li><a href="#">About</a></li>
-								<li><a href="#">Terms of Service</a></li>
-								<li><a href="DA-FORM-705.pdf" target="_blank">DA FORM 705</a></li>
-							</ul>
-						</div>
-					</div><!-- container-fluid -->
-				</nav>
-			</div><!-- container -->
-		</header><!-- header -->
-		<div id="content">
+				<h1>APFT Calculator</h1>
+				<p class="sub-title">United States Army Physical Fitness Test</p>
+ 			</div>
+		</header>
+		<div class="application">
 			<div class="container">
-				<div class="entry-wrapper">
-					<div class="entry inline form-horizontal">
-						<div class="col-sm-3">
+
+					<div class="col-md-4 col-sm-6">
+						<form id="calculator" class="form-horizontal">
+							<!-- gender -->
 							<div class="form-group">
-								<label for="gender">Gender</label>
-								<input class="form-control" type="text" id="gender">
+								<div class="col-sm-12">
+									<select id="gender" name="gender" class="form-control">
+										<option value="male">Male</option>
+										<option value="female">Female</option>
+									</select>
+								</div>
 							</div>
-						</div>
-						<div class="col-sm-3">
+							<!-- age -->
 							<div class="form-group">
-								<label for="age">Age</label>
-								<input class="form-control" type="text" id="age">
+								<div class="col-sm-12">
+									<select id="age" name="age" class="form-control" required>
+										<option value="17-21">17-21</option>
+										<option value="22-26">22-26</option>
+										<option value="27-31">27-31</option>
+										<option value="32-36">32-36</option>
+										<option value="37-41">37-41</option>
+										<option value="42-46">42-46</option>
+										<option value="47-51">47-51</option>
+										<option value="52-56">52-56</option>
+										<option value="57-61">57-61</option>
+										<option value="62+">62+</option>
+									</select>
+								</div>
 							</div>
-						</div>
-						<div class="col-sm-3">
+							<!-- push ups -->
 							<div class="form-group">
-								<label for="pu_raw">Pushups</label>
-								<input class="form-control" type="text" id="pu_raw">
+								<div class="col-sm-12">
+									<input placeholder="Push Ups" id="pu" name="pu" type="number" class="form-control input-md" min="0" max="1000" required>
+								</div>
 							</div>
-						</div>
-						<div class="col-sm-3">
+							<!-- situps -->
 							<div class="form-group">
-								<label for="su_raw">Situps</label>
-								<input class="form-control" type="text" id="su_raw">
+								<div class="col-sm-12">
+									<input placeholder="Sit-ups" id="su" name="su" type="number" class="form-control input-md" min="0" max="1000" required>
+								</div>
 							</div>
-						</div>
-						<div class="col-sm-3">
+							<!-- 2-mile run -->
+							<div class="form-group last-input-group">
+								<div class="col-xs-6">
+									<input placeholder="Minutes" id="min" name="min" type="number" class="form-control input-md" min="0" max="99" required>
+								</div>
+								<div class="col-xs-6">
+									<input placeholder="Seconds" id="sec" name="sec" type="number" class="form-control input-md" min="0" max="59" required>
+								</div>
+							</div>
+							<!-- submit data -->
 							<div class="form-group">
-								<label for="tmr_raw">2-Mile Run</label>
-								<input class="form-control" type="text" id="tmr_raw">
+								<div class="col-sm-12">
+									<button id="get_score" class="btn btn-primary">Get Score</button>
+									<div class="btn-group">
+										<button id="reset" class="btn btn-default">Reset</button>
+									</div>
+								</div>
 							</div>
-						</div>
-						<div class="col-sm-9">
-							<div class="form-group">
-								<label for="score">Score</label>
-								<input class="form-control" type="text" id="score" tabindex="-1" readonly="readonly">
-							</div>
-						</div>
-					</div><!-- entry -->
-				</div><!-- entry-wrapper -->
-				<div class="row">
-					<div class="col-sm-12">
-						<button class="btn btn-default" onclick="addEntry()">+<span class="sr-only"> Add Row</span></button>
-						<button class="btn btn-default" onclick="removeEntry()">-<span class="sr-only"> Remove Row</span></button>
+						</form>
 					</div>
-					<div class="col-sm-12 text-right">
-						<button class="btn btn-default btn-primary" onclick="calculateScore()">Calculate</button>
+					<div class="clearfix visible-xs"></div>
+					<div class="col-md-4 col-sm-6">
+						<div id="results" class="results">
+							<!-- score generated here -->
+						</div>
 					</div>
-				</div><!-- row -->
-			</div><!-- container -->
-	    </div><!-- content -->
-	</div><!-- site-wrap -->
-	<footer id="footer">
-		<div class="container text-center">
-			<img class="us-flag" src="assets/img/us-flag.svg" width="100">
-			<p>Hand Crafted in Rochester, NY by <a href="http://josephfus.co/" target="_blank">Joseph Fusco</a></p>
+
+			</div>
 		</div>
-	</footer><!-- footer -->
-	<script src="assets/js/build/app.min.js"></script>
-</body>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+		<script src="assets/js/app.js"></script>
+	</body>
 </html>

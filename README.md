@@ -1,1 +1,1 @@
-# APFT
+# APFT Calculator
