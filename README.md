@@ -1,6 +1,6 @@
 # APFT Calculator
 
-An Army Physical Fitness Test calculator built with javascript with all male and female standards accessible via [standards.json].
+An Army Physical Fitness Test calculator built with javascript with all male and female standards accessible via [JSON](standards.json).
 
 ## Development
 
