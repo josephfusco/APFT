@@ -6,12 +6,18 @@ h1 {
 }
 .header {
 	padding: 50px 0;
+	@media (max-width: 767px) {
+		padding: 25px 0ss;
+	}
 }
 .footer p {
 	color: #999;
 }
 .application {
 	padding: 0 0 50px;
+	@media (max-width: 767px) {
+		padding: 0;
+	}
 }
 .form-control {
 	box-shadow: none;
@@ -20,6 +26,9 @@ h1 {
 }
 .results {
 	padding: 0 50px;
+	@media (max-width: 767px) {
+		padding: 0;
+	}
 }
 th:first-child,
 td:first-child {
@@ -45,4 +54,7 @@ select.form-control {
 }
 .last-input-group {
 	padding-bottom: 50px;
+	@media (max-width: 767px) {
+		padding-bottom: 0;
+	}
 }
