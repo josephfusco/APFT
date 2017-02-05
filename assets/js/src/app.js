@@ -1,13 +1,12 @@
-(function ($) {
+(function($) {
 
 	$(document).ready(function () {
 		var standardsData;
-		var results = $('#results');
 
 		/**
 		 * Load APFT json data.
 		 */
-		$.getJSON('data/standards.json', function (data) {
+		$.getJSON('standards.json', function (data) {
 			standardsData = data;
 		});
 
@@ -15,8 +14,6 @@
 		 * Calculate score.
 		 */
 		$('#calculator').submit(function (e) {
-			results.empty();
-
 			var g = $('#gender').val();
 			var a = $('#age').val();
 			var pu = $('#pu').val();
@@ -36,8 +33,11 @@
 			// total up scores
 			var totalScore = puScore + suScore + runScore;
 
-			var resultTemplate = $( "<p>Push Up Score: "+puScore+"</p><p>Sit Up Score: "+suScore+"</p><p>Run Score: "+runScore+"</p><p>Total Score: "+totalScore+"</p>" );
-			results.append(resultTemplate);
+			// output results
+			$('.apft-pu-score').text(puScore);
+			$('.apft-su-score').text(suScore);
+			$('.apft-run-score').text(runScore);
+			$('.apft-total-score').text(totalScore);
 
 			return false; // prevent form submission
 		});
@@ -47,13 +47,14 @@
 		 */
 		$('#reset').click(function () {
 			$(this).closest('form').find('input[type=number], input[type=text]').val('');
-			results.empty();
 
 			return false; // prevent form submission
 		});
 
 		/**
 		 * Find the next lowest key.
+		 *
+		 * @link http://stackoverflow.com/questions/18410724/find-closest-lower-key-in-javascript-object
 		 */
 		var lowerKeyFinder = function (time) {
 			var keys = Object.keys(time);

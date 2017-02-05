@@ -14,89 +14,113 @@
 		<meta name="msapplication-TileColor" content="#FFFFFF">
 		<meta name="msapplication-TileImage" content="assets/img/favicon-144.png">
 		<meta name="msapplication-config" content="assets/img/browserconfig.xml">
-		<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-		<link href="assets/styles/app.css" rel="stylesheet">
+		<link href="assets/styles/dist/app.min.css" rel="stylesheet">
 	</head>
 	<body>
 		<header class="header">
 			<div class="container">
-				<h1>APFT Calculator</h1>
-				<p class="sub-title">United States Army Physical Fitness Test</p>
+				<div class="col-sm-12">
+					<a href="/"><h1>APFT Calculator</h1></a>
+					<p class="sub-title">United States Army Physical Fitness Test</p>
+				</div>
  			</div>
 		</header>
 		<div class="application">
 			<div class="container">
-
-					<div class="col-md-4 col-sm-6">
-						<form id="calculator" class="form-horizontal">
-							<!-- gender -->
-							<div class="form-group">
-								<div class="col-sm-12">
-									<select id="gender" name="gender" class="form-control">
-										<option value="male">Male</option>
-										<option value="female">Female</option>
-									</select>
-								</div>
+				<div class="col-md-4 col-sm-6">
+					<form id="calculator" class="form-horizontal">
+						<!-- gender -->
+						<div class="form-group">
+							<div class="col-sm-12">
+								<select id="gender" name="gender" class="form-control">
+									<option value="male">Male</option>
+									<option value="female">Female</option>
+								</select>
 							</div>
-							<!-- age -->
-							<div class="form-group">
-								<div class="col-sm-12">
-									<select id="age" name="age" class="form-control" required>
-										<option value="17-21">17-21</option>
-										<option value="22-26">22-26</option>
-										<option value="27-31">27-31</option>
-										<option value="32-36">32-36</option>
-										<option value="37-41">37-41</option>
-										<option value="42-46">42-46</option>
-										<option value="47-51">47-51</option>
-										<option value="52-56">52-56</option>
-										<option value="57-61">57-61</option>
-										<option value="62+">62+</option>
-									</select>
-								</div>
-							</div>
-							<!-- push ups -->
-							<div class="form-group">
-								<div class="col-sm-12">
-									<input placeholder="Push Ups" id="pu" name="pu" type="number" class="form-control input-md" min="0" max="1000" required>
-								</div>
-							</div>
-							<!-- situps -->
-							<div class="form-group">
-								<div class="col-sm-12">
-									<input placeholder="Sit-ups" id="su" name="su" type="number" class="form-control input-md" min="0" max="1000" required>
-								</div>
-							</div>
-							<!-- 2-mile run -->
-							<div class="form-group last-input-group">
-								<div class="col-xs-6">
-									<input placeholder="Minutes" id="min" name="min" type="number" class="form-control input-md" min="0" max="99" required>
-								</div>
-								<div class="col-xs-6">
-									<input placeholder="Seconds" id="sec" name="sec" type="number" class="form-control input-md" min="0" max="59" required>
-								</div>
-							</div>
-							<!-- submit data -->
-							<div class="form-group">
-								<div class="col-sm-12">
-									<button id="get_score" class="btn btn-primary">Get Score</button>
-									<div class="btn-group">
-										<button id="reset" class="btn btn-default">Reset</button>
-									</div>
-								</div>
-							</div>
-						</form>
-					</div>
-					<div class="clearfix visible-xs"></div>
-					<div class="col-md-4 col-sm-6">
-						<div id="results" class="results">
-							<!-- score generated here -->
 						</div>
+						<!-- age -->
+						<div class="form-group">
+							<div class="col-sm-12">
+								<select id="age" name="age" class="form-control" required>
+									<option value="17-21">17-21</option>
+									<option value="22-26">22-26</option>
+									<option value="27-31">27-31</option>
+									<option value="32-36">32-36</option>
+									<option value="37-41">37-41</option>
+									<option value="42-46">42-46</option>
+									<option value="47-51">47-51</option>
+									<option value="52-56">52-56</option>
+									<option value="57-61">57-61</option>
+									<option value="62+">62+</option>
+								</select>
+							</div>
+						</div>
+						<!-- push ups -->
+						<div class="form-group">
+							<div class="col-sm-12">
+								<input placeholder="Push Ups" id="pu" name="pu" type="number" class="form-control input-md" min="0" max="1000" required>
+							</div>
+						</div>
+						<!-- situps -->
+						<div class="form-group">
+							<div class="col-sm-12">
+								<input placeholder="Sit-ups" id="su" name="su" type="number" class="form-control input-md" min="0" max="1000" required>
+							</div>
+						</div>
+						<!-- 2-mile run -->
+						<div class="form-group last-input-group">
+							<div class="col-xs-6">
+								<input placeholder="Minutes" id="min" name="min" type="number" class="form-control input-md" min="0" max="99" required>
+							</div>
+							<div class="col-xs-6">
+								<input placeholder="Seconds" id="sec" name="sec" type="number" class="form-control input-md" min="0" max="59" required>
+							</div>
+						</div>
+						<!-- submit data -->
+						<div class="form-group">
+							<div class="col-sm-12">
+								<button id="get_score" class="btn btn-primary">Get Score</button>
+								<div class="btn-group">
+									<button id="reset" class="btn btn-default">Reset</button>
+								</div>
+							</div>
+						</div>
+					</form>
+				</div>
+				<div class="clearfix visible-xs"></div>
+				<div class="col-md-4 col-sm-6">
+					<div id="results" class="results">
+						<table class="table table-bordered">
+							<thead>
+								<tr>
+									<th>Exercise</th>
+									<th>Score</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td>Push Ups</td>
+									<td class="apft-pu-score"></td>
+								</tr>
+								<tr>
+									<td>Sit-Ups</td>
+									<td class="apft-su-score"></td>
+								</tr>
+								<tr>
+									<td>2 Mile Run</td>
+									<td class="apft-run-score"></td>
+								</tr>
+								<tr>
+									<td>Total Score</td>
+									<td class="apft-total-score"></td>
+								</tr>
+							</div>
+						</table>
 					</div>
-
+				</div>
 			</div>
 		</div>
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
-		<script src="assets/js/app.js"></script>
+		<script src="assets/js/dist/app.min.js"></script>
 	</body>
 </html>
