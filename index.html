@@ -15,6 +15,9 @@
 		<meta name="msapplication-TileImage" content="assets/img/favicon-144.png">
 		<meta name="msapplication-config" content="assets/img/browserconfig.xml">
 		<link href="assets/styles/dist/app.min.css" rel="stylesheet">
+		<script type="text/javascript">
+			document.documentElement.className = 'loading';
+		</script>
 	</head>
 	<body>
 		<header class="header">
@@ -58,28 +61,28 @@
 						<!-- push ups -->
 						<div class="form-group">
 							<div class="col-sm-12">
-								<input placeholder="Push Ups" id="pu" name="pu" type="number" class="form-control input-md" min="0" max="1000" required>
+								<input placeholder="Push Ups" id="pu" name="pu" type="number" class="form-control input-md" min="0" required>
 							</div>
 						</div>
 						<!-- situps -->
 						<div class="form-group">
 							<div class="col-sm-12">
-								<input placeholder="Sit-ups" id="su" name="su" type="number" class="form-control input-md" min="0" max="1000" required>
+								<input placeholder="Sit-ups" id="su" name="su" type="number" class="form-control input-md" min="0" required>
 							</div>
 						</div>
 						<!-- 2-mile run -->
 						<div class="form-group last-input-group">
 							<div class="col-xs-6">
-								<input placeholder="Minutes" id="min" name="min" type="number" class="form-control input-md" min="0" max="99" required>
+								<input placeholder="Minutes" id="min" name="min" type="text" class="form-control input-md" min="0" max="99" pattern="\d{2}" required title="Two digit number">
 							</div>
 							<div class="col-xs-6">
-								<input placeholder="Seconds" id="sec" name="sec" type="number" class="form-control input-md" min="0" max="59" required>
+								<input placeholder="Seconds" id="sec" name="sec" type="text" class="form-control input-md" min="0" max="59" pattern="\d{2}" required title="Two digit number">
 							</div>
 						</div>
 						<!-- submit data -->
 						<div class="form-group">
 							<div class="col-sm-12">
-								<button id="get_score" class="btn btn-primary">Get Score</button>
+								<button id="get_score" class="btn btn-lg btn-primary">Get Score</button>
 								<div class="btn-group">
 									<button id="reset" class="btn btn-default">Reset</button>
 								</div>
@@ -88,7 +91,7 @@
 					</form>
 				</div>
 				<div class="clearfix visible-xs"></div>
-				<div class="col-md-4 col-sm-6">
+				<div class="col-md-4 col-md-offset-1 col-sm-6">
 					<div id="results" class="results">
 						<table class="table table-bordered">
 							<thead>
@@ -123,6 +126,11 @@
 		<footer class="footer">
 			<div class="container">
 				<div class="col-sm-12">
+					<nav class="nav">
+						<ul>
+							<li><a href="DA-FORM-705.pdf">DA-FORM-705</a></li>
+						</ul>
+					</nav>
 					<p>Made in Rochester, NY by <a href="https://josephfus.co" target="_blank">Joseph Fusco</a></p>
 				</div>
 			</div>

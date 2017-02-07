@@ -1,20 +1,35 @@
 h1 {
 	margin-bottom: 0;
 }
+a:hover, a:focus {
+	text-decoration: none;
+}
 .sub-title {
 	color: #999;
 }
 .header {
 	padding: 50px 0;
 	@media (max-width: 767px) {
-		padding: 25px 0ss;
+		padding: 25px 0;
 	}
 }
 .footer p {
 	color: #999;
 }
+.application #get_score {
+	padding: 20px 40px;
+}
+.application #reset {
+	background: none;
+	border: 0;
+}
 .application {
 	padding: 0 0 50px;
+	opacity: 1;
+	transition: .3s .2s opacity;
+	html.loading & {
+		opacity: 0;
+	}
 	@media (max-width: 767px) {
 		padding: 0;
 	}
@@ -23,12 +38,6 @@ h1 {
 	box-shadow: none;
 	font-size: 16px;
 	-webkit-appearance: none;
-}
-.results {
-	padding: 0 50px;
-	@media (max-width: 767px) {
-		padding: 0;
-	}
 }
 th:first-child,
 td:first-child {
