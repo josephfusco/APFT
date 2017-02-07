@@ -32,18 +32,14 @@
 			<div class="container">
 				<div class="col-md-4 col-sm-6">
 					<form id="calculator" class="form-horizontal">
-						<!-- gender -->
 						<div class="form-group">
-							<div class="col-sm-12">
+							<div class="col-xs-6">
 								<select id="gender" name="gender" class="form-control">
 									<option value="male">Male</option>
 									<option value="female">Female</option>
 								</select>
 							</div>
-						</div>
-						<!-- age -->
-						<div class="form-group">
-							<div class="col-sm-12">
+							<div class="col-xs-6">
 								<select id="age" name="age" class="form-control" required>
 									<option value="17-21">17-21</option>
 									<option value="22-26">22-26</option>
@@ -58,19 +54,16 @@
 								</select>
 							</div>
 						</div>
-						<!-- push ups -->
 						<div class="form-group">
 							<div class="col-sm-12">
 								<input placeholder="Push Ups" id="pu" name="pu" type="number" class="form-control input-md" min="0" required>
 							</div>
 						</div>
-						<!-- situps -->
 						<div class="form-group">
 							<div class="col-sm-12">
 								<input placeholder="Sit-ups" id="su" name="su" type="number" class="form-control input-md" min="0" required>
 							</div>
 						</div>
-						<!-- 2-mile run -->
 						<div class="form-group last-input-group">
 							<div class="col-xs-6">
 								<input placeholder="Minutes" id="min" name="min" type="text" class="form-control input-md" min="0" max="99" pattern="\d{2}" required title="Two digit number">
@@ -79,7 +72,6 @@
 								<input placeholder="Seconds" id="sec" name="sec" type="text" class="form-control input-md" min="0" max="59" pattern="\d{2}" required title="Two digit number">
 							</div>
 						</div>
-						<!-- submit data -->
 						<div class="form-group">
 							<div class="col-sm-12">
 								<button id="get_score" class="btn btn-lg btn-primary">Get Score</button>
