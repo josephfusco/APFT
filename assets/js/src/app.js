@@ -97,7 +97,10 @@
 		 */
 		$('#reset').click(function () {
 			$(this).closest('#calculator').find('input[type=number], input[type=text]').val('');
-
+			$('.apft-pu-score').text('');
+			$('.apft-su-score').text('');
+			$('.apft-run-score').text('');
+			$('.apft-total-score').text('');
 			return false; // prevent form submission
 		});
 
