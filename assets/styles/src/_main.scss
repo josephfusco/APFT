@@ -66,6 +66,10 @@ a:hover, a:focus {
 		padding: 25px 0 0;
 	}
 }
+.table-bordered>thead>tr>td,
+.table-bordered>thead>tr>th {
+	border-bottom-width: 1px
+}
 .form-control {
 	box-shadow: none;
 	font-size: 16px;
