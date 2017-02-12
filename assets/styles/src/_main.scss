@@ -10,10 +10,17 @@ h1 {
 a:hover, a:focus {
 	text-decoration: none;
 }
+.btn {
+	transition: .2s background-color, .15s color;
+}
 .sub-title {
 	color: #999;
+	@media (max-width: 767px) {
+		display: none;
+	}
 }
 .header {
+	background-color: #252525;;
 	padding: 50px 0;
 	@media (max-width: 767px) {
 		padding: 25px 0;
@@ -29,15 +36,34 @@ a:hover, a:focus {
 	background: none;
 	border: 0;
 }
+.brand {
+	img {
+		display: inline-block;
+		vertical-align: middle;
+		height: auto;
+		width: 60px;
+		margin-right: 10px;
+	}
+	&:hover, &:focus {
+		color: $brand-primary;
+	}
+}
+.brand-text {
+	display: inline-block;
+	vertical-align: middle;
+	* {
+		margin: 0;
+	}
+}
 .application {
-	padding: 0 0 50px;
+	padding: 50px 0 50px;
 	opacity: 1;
 	transition: .3s .2s opacity;
 	html.loading & {
 		opacity: 0;
 	}
 	@media (max-width: 767px) {
-		padding: 0;
+		padding: 25px 0 0;
 	}
 }
 .form-control {
