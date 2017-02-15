@@ -42,18 +42,25 @@
 			// total all exercise scores
 			var totalScore = puScore + suScore + runScore;
 
-			// clear pass fail classes
+			// clear pass fail
 			$('[class*="apft-result-"]').removeClass('pass fail');
 
 			var puPF = getPassFail(puScore);
 			var suPF = getPassFail(suScore);
-			var runPF = getPassFail(ruScore);
+			var runPF = getPassFail(runScore);
 
 			// output results
 			$('.apft-result-pu-score').text(puScore).addClass(puPF);
 			$('.apft-result-su-score').text(suScore).addClass(suPF);
 			$('.apft-result-run-score').text(runScore).addClass(runPF);
 			$('.apft-result-total-score').text(totalScore);
+
+			// Get total score pass or fail
+			if ($('[class*="apft-result-"]').hasClass('fail')) {
+				$('.apft-result-total-score').addClass('fail');
+			} else {
+				$('.apft-result-total-score').addClass('pass');
+			}
 
 			$('#results').removeClass('hidden');
 			$('#results')[0].scrollIntoView(true);

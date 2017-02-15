@@ -58,16 +58,17 @@ a:hover, a:focus {
 		border-radius: 0;
 		text-transform: uppercase;
 		width: 100%;
-		transition: .2s background-color, .15s color;
+		transition: .2s background-color, .15s color, .2s border-color;
 		@media (max-width: $screen-xs-max) {
 			margin-bottom: 15px;
 		}
 	}
 	#reset {
-		background: none;
-		border-color: #222;
+		background-color: #1b1b1b;
+		border-color: #1b1b1b;
 		&:hover, &:focus {
-			border-color: #1b1b1b;
+			background-color: #181818;
+			border-color: #181818;
 		}
 	}
 }
