@@ -85,8 +85,7 @@ a:hover, a:focus {
 	.pull-left {
 		text-align: left;
 		@media (max-width: $screen-xs-max) {
-			float: none !important;
-			text-align: center;
+			display: none;
 		}
 	}
 	.pull-right {
