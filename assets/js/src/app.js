@@ -9,7 +9,7 @@
 		$.getJSON('standards.json', function (data) {
 			standardsData = data;
 		}).done(function( data ) {
-			$('html').removeClass('loading');
+			$('html').addClass('application-loaded');
 		});
 
 		/**
@@ -47,6 +47,7 @@
 			$('.apft-su-score').text(suScore);
 			$('.apft-run-score').text(runScore);
 			$('.apft-total-score').text(totalScore);
+			$('#results').removeClass('hidden');
 
 			return false; // prevent form submission
 		});
@@ -101,6 +102,8 @@
 			$('.apft-su-score').text('');
 			$('.apft-run-score').text('');
 			$('.apft-total-score').text('');
+			$('#results').addClass('hidden');
+
 			return false; // prevent form submission
 		});
 

@@ -6,6 +6,7 @@ const uglify = require('gulp-uglify')
 const pump = require('pump')
 const cleanCSS = require('gulp-clean-css')
 const autoprefixer = require('gulp-autoprefixer')
+const rev = require('gulp-rev-append')
 
 gulp.task('styles', () => {
 	gulp.src('./assets/styles/src/**/*.scss')
@@ -25,9 +26,15 @@ gulp.task('js', (cb) => {
 	],cb);
 });
 
+gulp.task('rev', () => {
+	gulp.src('./index.html')
+		.pipe(rev())
+		.pipe(gulp.dest('.'));
+});
+
 gulp.task('watch', () => {
-	gulp.watch('./assets/styles/src/**/*.scss', ['styles'])
-	gulp.watch('./assets/js/src/**/*.js', ['js'])
+	gulp.watch('./assets/styles/src/**/*.scss', ['styles', 'rev'])
+	gulp.watch('./assets/js/src/**/*.js', ['js', 'rev'])
 });
 
 gulp.task('default', ['styles', 'js', 'watch'])

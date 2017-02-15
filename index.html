@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html class="loading">
 	<head>
 		<meta charset="utf-8">
 		<title>APFT Calculator</title>
@@ -14,10 +14,7 @@
 		<meta name="msapplication-TileColor" content="#FFFFFF">
 		<meta name="msapplication-TileImage" content="assets/img/favicon-144.png">
 		<meta name="msapplication-config" content="assets/img/browserconfig.xml">
-		<link href="assets/styles/dist/app.min.css?ver=1.0.6" rel="stylesheet">
-		<script type="text/javascript">
-			document.documentElement.className = 'loading';
-		</script>
+		<link href="assets/styles/dist/app.min.css?rev=5f397f9d12cac2a7e4c5584317b9766f" rel="stylesheet">
 	</head>
 	<body>
 		<header class="header">
@@ -73,25 +70,25 @@
 						</div>
 						<div class="form-group last-input-group">
 							<div class="col-xs-6">
-								<input placeholder="Minutes" id="min" name="min" type="text" class="form-control input-md" min="0" max="99" pattern="\d{2}" required title="Two digit number">
+								<input placeholder="Run Minutes" id="min" name="min" type="text" class="form-control input-md" min="0" max="99" pattern="\d{2}" required title="Two digit number">
 							</div>
 							<div class="col-xs-6">
-								<input placeholder="Seconds" id="sec" name="sec" type="text" class="form-control input-md" min="0" max="59" pattern="\d{2}" required title="Two digit number">
+								<input placeholder="Run Seconds" id="sec" name="sec" type="text" class="form-control input-md" min="0" max="59" pattern="\d{2}" required title="Two digit number">
 							</div>
 						</div>
 						<div class="form-group">
-							<div class="col-sm-12">
+							<div class="col-sm-6 col-sm-push-6">
 								<button id="get_score" class="btn btn-primary">Get Score</button>
-								<div class="btn-group">
-									<button id="reset" class="btn btn-default">Reset</button>
-								</div>
+							</div>
+							<div class="col-sm-6 col-sm-pull-6">
+								<button id="reset" class="btn btn-default">Reset</button>
 							</div>
 						</div>
 					</form>
 				</div>
 				<div class="clearfix visible-xs"></div>
-				<div class="col-md-4 col-md-offset-1 col-sm-6">
-					<div id="results" class="results">
+				<div class="col-md-4 col-sm-offset-1 col-sm-5">
+					<div id="results" class="results hidden">
 						<table class="table table-bordered">
 							<thead>
 								<tr>
@@ -125,12 +122,17 @@
 		<footer class="footer">
 			<div class="container">
 				<div class="col-sm-12">
-					<p>Made in Rochester, NY by <a href="https://josephfus.co" target="_blank">Joseph Fusco</a></p>
+					<div class="pull-left">
+						<a href="DA-FORM-705.pdf">DA FORM 705</a>
+					</div>
+					<div class="pull-right">
+						<p>Made in Rochester, NY by <a href="https://josephfus.co" target="_blank">Joseph Fusco</a></p>
+					</div>
 				</div>
 			</div>
 		</footer>
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
-		<script src="assets/js/dist/app.min.js?ver=1.0.6"></script>
+		<script src="assets/js/dist/app.min.js?rev=a4b50c608c1521dc5a95cf1e85ac9d5a"></script>
 		<script>
 			(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
 			(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),

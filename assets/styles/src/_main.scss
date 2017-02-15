@@ -10,31 +10,19 @@ h1 {
 a:hover, a:focus {
 	text-decoration: none;
 }
-.btn {
-	transition: .2s background-color, .15s color;
-}
 .sub-title {
 	color: #999;
-	@media (max-width: 767px) {
+	@media (max-width: $screen-xs-max) {
 		display: none;
 	}
 }
 .header {
 	background-color: #252525;;
 	padding: 50px 0;
-	@media (max-width: 767px) {
+	@media (max-width: $screen-xs-max) {
 		padding: 25px 0;
+		text-align: center;
 	}
-}
-.footer p {
-	color: #999;
-}
-.application #get_score {
-	padding: 16px 28px;
-}
-.application #reset {
-	background: none;
-	border: 0;
 }
 .brand {
 	img {
@@ -56,14 +44,57 @@ a:hover, a:focus {
 	}
 }
 .application {
-	padding: 50px 0 50px;
-	opacity: 1;
+	padding: 50px 0 100px;
+	opacity: 0;
 	transition: .3s .2s opacity;
-	html.loading & {
-		opacity: 0;
+	html.application-loaded & {
+		opacity: 1;
 	}
-	@media (max-width: 767px) {
-		padding: 25px 0 0;
+	@media (max-width: $screen-xs-max) {
+		padding: 25px 0 25px;
+	}
+	.btn {
+		padding: 16px 28px;
+		border-radius: 0;
+		text-transform: uppercase;
+		width: 100%;
+		transition: .2s background-color, .15s color;
+		@media (max-width: $screen-xs-max) {
+			margin-bottom: 15px;
+		}
+	}
+	#reset {
+		background: none;
+		border-color: #222;
+		&:hover, &:focus {
+			border-color: #1b1b1b;
+		}
+	}
+}
+.footer {
+	padding: 0 0 50px;
+	@media (max-width: $screen-xs-max) {
+		padding: 0 0 15px;
+	}
+	p {
+		color: #222;
+	}
+	a {
+		color: #333;
+	}
+	.pull-left {
+		text-align: left;
+		@media (max-width: $screen-xs-max) {
+			float: none !important;
+			text-align: center;
+		}
+	}
+	.pull-right {
+		text-align: right;
+		@media (max-width: $screen-xs-max) {
+			float: none !important;
+			text-align: center;
+		}
 	}
 }
 .table-bordered>thead>tr>td,
@@ -74,6 +105,9 @@ a:hover, a:focus {
 	box-shadow: none;
 	font-size: 16px;
 	-webkit-appearance: none;
+}
+.form-group:last-child {
+	margin-bottom: 0;
 }
 th:first-child,
 td:first-child {
@@ -92,14 +126,9 @@ select.form-control {
 	cursor: pointer;
 	-webkit-border-radius: 0px;
 }
-.btn {
-	padding: 10px 20px;
-	border-radius: 0;
-	text-transform: uppercase;
-}
 .last-input-group {
-	padding-bottom: 50px;
-	@media (max-width: 767px) {
-		padding-bottom: 0;
+	margin-bottom: 50px;
+	@media (max-width: $screen-xs-max) {
+		margin-bottom: 15px;
 	}
 }
