@@ -42,15 +42,32 @@
 			// total all exercise scores
 			var totalScore = puScore + suScore + runScore;
 
+			// clear pass fail classes
+			$('[class*="apft-result-"]').removeClass('pass fail');
+
+			var puPF = getPassFail(puScore);
+			var suPF = getPassFail(suScore);
+			var runPF = getPassFail(ruScore);
+
 			// output results
-			$('.apft-pu-score').text(puScore);
-			$('.apft-su-score').text(suScore);
-			$('.apft-run-score').text(runScore);
-			$('.apft-total-score').text(totalScore);
+			$('.apft-result-pu-score').text(puScore).addClass(puPF);
+			$('.apft-result-su-score').text(suScore).addClass(suPF);
+			$('.apft-result-run-score').text(runScore).addClass(runPF);
+			$('.apft-result-total-score').text(totalScore);
+
 			$('#results').removeClass('hidden');
+			$('#results')[0].scrollIntoView(true);
 
 			return false; // prevent form submission
 		});
+
+		function getPassFail(number) {
+			if (number >= 60) {
+				return 'pass';
+			} else {
+				return 'fail';
+			}
+		}
 
 		/**
 		 * Keep keys within range and pick the next lowest if it doesn't exist.

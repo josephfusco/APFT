@@ -115,6 +115,11 @@ td:first-child {
 td:last-child {
 	font-family: monospace;
 }
+.table-bordered>thead>tr>th,
+.table-bordered>tbody>tr>td {
+	border-width: 2px;
+	font-weight: 700;
+}
 select.form-control {
 	background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAsAAAALCAYAAACprHcmAAAAoElEQVQoU5WRwQ3CMAxFf6TkDCN0A2ACwgY+xHPAKDCHc8gGlAmADRiBnhMpKJWogEJFfLP0vu3/rVBRqoKFYuYlgPMfolU/mZlbAOsJwUlEbA8T0dwYcwMw+yLoYoxNCOE+3Oycs0qp4yecc95478tmvBlk5j2A7YvgICK7Zz9Kg5kvABYAriJSzA81gomo0Vq3KSUbQig+fsNTEVY95QGd9So7rziDbAAAAABJRU5ErkJggg==);
 	background-repeat: no-repeat;
@@ -130,4 +135,10 @@ select.form-control {
 	@media (max-width: $screen-xs-max) {
 		margin-bottom: 15px;
 	}
+}
+.pass {
+	color: #008200;
+}
+.fail {
+	color: #c70000;
 }
