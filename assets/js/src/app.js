@@ -65,6 +65,9 @@
 			$('#results').removeClass('hidden');
 			$('#results')[0].scrollIntoView(true);
 
+			// play audio
+			$('.hooah')[0].play();
+
 			return false; // prevent form submission
 		});
 
