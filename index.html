@@ -20,7 +20,7 @@
 		<meta property="og:image" content="http://apft.metttc.com/assets/img/pt-shirt.png">
 		<meta property="og:image:secure_url" content="https://apft.metttc.com/assets/img/pt-shirt.png">
 		<meta property="og:image:type" content="image/jpeg">
-		<link href="assets/styles/dist/app.min.css?rev=a0e3aa3107b9530819b51c1d884f6bf4" rel="stylesheet">
+		<link href="assets/styles/dist/app.min.css?rev=2b5e9e67c47a52f55c3a37e2874a15cf" rel="stylesheet">
 	</head>
 	<body>
 		<header class="header" role="banner">
@@ -52,7 +52,7 @@
 							</div>
 							<div class="col-xs-6">
 								<label for="age" class="sr-only">Gender</label>
-								<select id="age" name="age" class="form-control" required>
+								<select id="age" name="age" class="form-control">
 									<option value="17-21">17-21</option>
 									<option value="22-26">22-26</option>
 									<option value="27-31">27-31</option>
@@ -69,28 +69,28 @@
 						<div class="form-group">
 							<div class="col-sm-12">
 								<label for="pu" class="sr-only">Push Ups</label>
-								<input placeholder="Push Ups" id="pu" name="pu" type="number" class="form-control input-md" min="0" required>
+								<input placeholder="Push Ups" id="pu" name="pu" type="number" class="form-control input-md">
 							</div>
 						</div>
 						<div class="form-group">
 							<div class="col-sm-12">
 								<label for="su" class="sr-only">Sit-ups</label>
-								<input placeholder="Sit-ups" id="su" name="su" type="number" class="form-control input-md" min="0" required>
+								<input placeholder="Sit-ups" id="su" name="su" type="number" class="form-control input-md">
 							</div>
 						</div>
 						<div class="form-group last-input-group">
 							<div class="col-xs-6">
 								<label for="min" class="sr-only">Run minutes</label>
-								<input placeholder="Run Minutes" id="min" name="min" type="text" class="form-control input-md" min="0" max="99" pattern="\d{2}" required title="Two digit number">
+								<input placeholder="Run Minutes" id="min" name="min" type="number" class="form-control input-md">
 							</div>
 							<div class="col-xs-6">
 								<label for="sec" class="sr-only">Run seconds</label>
-								<input placeholder="Run Seconds" id="sec" name="sec" type="text" class="form-control input-md" min="0" max="59" pattern="\d{2}" required title="Two digit number">
+								<input placeholder="Run Seconds" id="sec" name="sec" type="number" class="form-control input-md">
 							</div>
 						</div>
 						<div class="form-group">
 							<div class="col-sm-6 col-sm-push-6">
-								<button id="get_score" class="btn btn-primary">Get Score</button>
+								<input id="get_score" class="btn btn-primary" type="submit" value="Get Score">
 							</div>
 							<div class="col-sm-6 col-sm-pull-6">
 								<button id="reset" class="btn btn-default">Reset</button>
@@ -143,8 +143,9 @@
 				</div>
 			</div>
 		</footer>
-		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
-		<script src="assets/js/dist/app.min.js?rev=246bd3e1645a79945a8d6fe366ce488d"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.16.0/jquery.validate.min.js"></script>
+		<script src="assets/js/dist/app.min.js?rev=17e3a2ae334eb6b5b9c33c8b99bdca2e"></script>
 		<script>
 			(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
 			(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),

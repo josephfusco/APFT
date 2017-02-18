@@ -1,7 +1,38 @@
 (function($) {
 
 	$(document).ready(function () {
+		var calc = $('#calculator');
 		var standardsData;
+
+		/**
+		 * Initialize jquery-validate
+		 */
+		calc.validate({
+			rules: {
+				gender: {
+					required: true
+				},
+				age: {
+					required: true
+				},
+				pu: {
+					required: true
+				},
+				su: {
+					required: true
+				},
+				min: {
+					required: true,
+					min: 00,
+					max: 99
+				},
+				sec: {
+					required: true,
+					min: 00,
+					max: 59
+				}
+			}
+		});
 
 		/**
 		 * Load APFT json data.
@@ -13,9 +44,19 @@
 		});
 
 		/**
-		 * Calculate score.
+		 * Form submbission.
 		 */
-		$('#calculator').submit(function () {
+		calc.submit(function () {
+			var isValidated = calc.valid();
+			if (isValidated) {
+				calculateScore();
+				return false;
+			} else {
+				return false;
+			}
+		});
+
+		function calculateScore() {
 			var g = $('#gender').val();
 			var a = $('#age').val();
 			var pu = $('#pu').val();
@@ -64,9 +105,7 @@
 
 			$('#results').removeClass('hidden');
 			$('#results')[0].scrollIntoView(true);
-
-			return false; // prevent form submission
-		});
+		};
 
 		function getPassFail(number) {
 			if (number >= 60) {

@@ -106,6 +106,12 @@ a:hover, a:focus {
 	font-size: 16px;
 	-webkit-appearance: none;
 }
+label.error {
+	margin-bottom: 0;
+	font-weight: 500;
+	font-size: 12px;
+	color: $red;
+}
 .form-group:last-child {
 	margin-bottom: 0;
 }
@@ -138,8 +144,8 @@ select.form-control {
 	}
 }
 .pass {
-	color: #008200;
+	color: $green;
 }
 .fail {
-	color: #c70000;
+	color: $red;
 }
