@@ -3,11 +3,7 @@
 	$(document).ready(function () {
 		var calc = $('#calculator');
 		var standardsData;
-
-		/**
-		 * Initialize jquery-validate
-		 */
-		calc.validate({
+		var validator = calc.validate({
 			rules: {
 				gender: {
 					required: true
@@ -166,6 +162,7 @@
 			$('.apft-run-score').text('');
 			$('.apft-total-score').text('');
 			$('#results').addClass('hidden');
+			validator.resetForm();
 
 			return false; // prevent form submission
 		});
