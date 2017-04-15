@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="robots" content="noindex">
+<title>Run Stencil</title>
+<style>
+body {
+	background: #000;
+	padding-bottom: 300px;
+}
+img.chart {
+	width: 1600px;
+	display: block;
+	height: auto;
+}
+[class*="stencil--"] {
+	position: fixed;
+	left: 222px;
+	top: 102px;
+	height: auto;
+	fill: rgba(0,0,0,.8);
+	display: none;
+}
+.male--visible .stencil--male,
+.female--visible .stencil--female {
+	display: block;
+}
+button {
+	font-size: 24px;
+	cursor: pointer;
+	border: 0;
+	position: fixed;
+	left: 0;
+	margin: 10px;
+	width: 150px;
+	text-align: center;
+	text-transform: uppercase;
+	padding: 10px;
+}
+button:focus {
+	outline: none;
+}
+.male--visible #male,
+.female--visible #female {
+	background: #bed821;
+	color: #fff;
+}
+#male {
+	top: 0;
+}
+#female {
+	top: 55px;
+}
+</style>
+</head>
+<body>
+<div class="container">
+	<button id="male">Male</button>
+	<button id="female">Female</button>
+	<svg class="stencil--male" xmlns="http://www.w3.org/2000/svg" width="1163" height="112"><path fill-rule="evenodd" d="M1163 71.5V112H0V68h154V44H0V0h1163v71.5zM636 68h44V44h-44v24zM194 44v24h43V44h-43zm818 0h-43v24h43V44zm-83 0h-43v24h43V44zm-83 0h-43v24h43V44zm-83 0h-43v24h43V44zm-277 0h-43v24h43V44zm-83 0h-43v24h43V44zm-83 0h-43v24h43V44z"/></svg>
+	<svg class="stencil--female" xmlns="http://www.w3.org/2000/svg" width="1163" height="112"><path fill-rule="evenodd" d="M1163 71.5V112H0V68h111V44H0V0h1163v71.5zM1048 68V44h-39v24h39zm-527 0V44h-38v24h38zM151 44v24h43V44h-43zm818 0h-43v24h43V44zm-83 0h-43v24h43V44zm-83 0h-43v24h43V44zm-83 0h-45v24h45V44zm-277 0h-43v24h43V44zm-83 0h-43v24h43V44zm-83 0h-43v24h43V44z"/></svg>
+	<img class="chart" src="/tools/run1.svg" alt="">
+	<img class="chart" src="/tools/run2.svg" alt="">
+</div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<script>
+(function($) {
+	$( document ).ready(function() {
+		$('body').addClass('male--visible');
+		$('#male').on('click',function(){
+			$('body').removeClass('female--visible').addClass('male--visible');
+		});
+		$('#female').on('click',function(){
+			$('body').removeClass('male--visible').addClass('female--visible');
+		});
+	});
+})(jQuery);
+</script>
+</body>
+</html>
