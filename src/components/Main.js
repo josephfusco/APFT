@@ -28,13 +28,13 @@ class Main extends React.Component {
                     <div className="field">
                         <label className="label" htmlFor="apft_pu">Push-Ups</label>
                         <div className="control">
-                            <input className="input" type="number" pattern="[0-9]*" min="0" inputMode="numeric" id="apft_pu" onChange={this.props.handleChange} />
+                            <input className="input" type="number" pattern="[0-9]*" min="0" inputMode="numeric" id="apft_pu" onChange={this.props.handleChange} placeholder="0" />
                         </div>
                     </div>
                     <div className="field">
                         <label className="label" htmlFor="apft_su">Sit-Ups</label>
                         <div className="control">
-                            <input className="input" type="number" pattern="[0-9]*" min="0" inputMode="numeric" id="apft_su" onChange={this.props.handleChange} />
+                            <input className="input" type="number" pattern="[0-9]*" min="0" inputMode="numeric" id="apft_su" onChange={this.props.handleChange} placeholder="0" />
                         </div>
                     </div>
                     <div className="columns">
