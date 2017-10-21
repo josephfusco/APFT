@@ -2,14 +2,13 @@
   "name": "react-apft",
   "version": "0.1.0",
   "private": true,
-  "author":{
+  "author": {
     "name": "Joseph Fusco",
     "email": "hello@josephfus.co",
     "url": "https://josephfus.co/"
   },
   "dependencies": {
     "node-sass-chokidar": "^0.0.3",
-    "npm-run-all": "^4.1.1",
     "react": "^16.0.0",
     "react-dom": "^16.0.0",
     "react-scripts": "1.0.14",
