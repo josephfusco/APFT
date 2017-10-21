@@ -1,0 +1,88 @@
+@import "styles/variables";
+@import "styles/mixins";
+@import "styles/placeholders";
+
+.Main {
+    @include make-room-for-sidebar;
+    padding-bottom: 10px;
+
+    .field {
+        margin-bottom: 15px;
+    }
+
+    .gender-control {
+        display: flex;
+        background-color: $color__primary-2;
+        border-radius: 4px;
+        position: relative;
+    }
+
+    .gender-group {
+        flex: 1;
+
+        input[type="radio"] {
+            @extend %screen-reader-text;
+        }
+
+        input[type="radio"]:checked + label {
+            color: $white;
+        }
+
+        label {
+            cursor: pointer;
+            position: relative;
+            z-index: 1;
+            text-align: center;
+            display: block;
+            padding: 15px;
+            color: $color__label-on-primary-2;
+            font-family: $font__monospace;
+        }
+
+    }
+
+    .active-gender-slider {
+        position: absolute;
+        height: 100%;
+        width: 50%;
+        border-radius: 4px;
+        background-color: $color__secondary;
+        transition: .2s ease;
+    }
+
+    [data-gender="male"] {
+        .active-gender-slider {
+            transform: translateX(0);
+        }
+    }
+
+    [data-gender="female"] {
+        .active-gender-slider {
+            transform: translateX(100%);
+        }
+    }
+
+    [for="apft_sec"] + .control {
+        position: relative;
+        &::before {
+            position: absolute;
+            content: ':';
+            left: -9px;
+            line-height: $input-height;
+        }
+    }
+
+    .columns {
+        display: flex;
+    }
+
+    .column {
+        flex: 1;
+    }
+
+    .label {
+        margin-bottom: 9px;
+        display: block;
+    }
+
+}

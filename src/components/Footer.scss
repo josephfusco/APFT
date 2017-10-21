@@ -1,0 +1,26 @@
+@import "styles/variables";
+@import "styles/mixins";
+@import "styles/placeholders";
+
+.Footer {
+    @include make-room-for-sidebar;
+
+    .credit {
+        text-align: right;
+        font-size: .8em;
+        color: rgba($color__label, .5);
+        padding-bottom: 2em;
+        a {
+            color: rgba($color__label, .5);
+            transition: .2s;
+
+            @include hover {
+                color: $color__secondary;
+                outline: 0;
+            }
+
+        }
+
+    }
+
+}

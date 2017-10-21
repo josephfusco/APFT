@@ -1,0 +1,30 @@
+.label {
+    color: $color__label;
+    font-size: .8em;
+    line-height: 1em;
+    user-select: none;
+}
+
+.container {
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+
+    @media (min-width: 768px) {
+        width: 650px;
+    }
+
+}
+
+#root {
+    @media (min-height: 750px) {
+        display: flex;
+        align-items: center;
+        height: 100%;
+    }
+}
+
+.App {
+    flex: 1;
+}

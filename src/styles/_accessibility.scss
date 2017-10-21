@@ -1,0 +1,7 @@
+.screen-reader-text {
+    @extend %screen-reader-text;
+}
+
+.screen-reader-text:focus {
+    @extend %screen-reader-text-focus;
+}

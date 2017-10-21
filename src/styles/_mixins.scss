@@ -1,0 +1,18 @@
+@mixin hover() {
+    &:hover, &:focus {
+        @content;
+    }
+}
+
+@mixin is-xs() {
+    @media screen and (max-width: 480px){
+        @content;
+    }
+}
+
+@mixin make-room-for-sidebar() {
+    margin-left: $sidebar-width;
+    @include is-xs {
+        margin-left: $sidebar-width-xs;
+    }
+}

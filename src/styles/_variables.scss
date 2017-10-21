@@ -1,0 +1,28 @@
+// Colors
+$reflective-yellow: #BED648;
+$black-pearl: #2E3542;
+$bunting:  #1D2532;
+$mirage: #141C25;
+$gray: #B6B6B6;
+$white: #FFF;
+
+$color__main: $gray;
+$color__primary: $black-pearl;
+$color__primary-2: $bunting;
+$color__primary-3: $mirage;
+$color__secondary: $reflective-yellow;
+$color__label: $gray;
+$color__label-on-primary-2: lighten($color__primary, 9%);
+
+// Fonts
+$font__sans-serif: 'Overpass', sans-serif;
+$font__monospace: 'Roboto Mono', monospace;
+
+// Sizes
+$sidebar-width: 100px;
+$sidebar-width-xs: 70px;
+
+$legend-font-size: 1em;
+$legend-margin-bottom: 9px;
+
+$input-height: 45px;

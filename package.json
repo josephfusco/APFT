@@ -1,23 +1,29 @@
 {
-  "name": "apft",
-  "description": "United States Army Physical Fitness Test Calculator",
-  "author": "Joseph Fusco",
-  "homepage": "http://apft.metttc.com",
-  "license": "MIT",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/josephfusco/apft"
+  "name": "react-apft",
+  "version": "0.1.0",
+  "private": true,
+  "author":{
+    "name": "Joseph Fusco",
+    "email": "hello@josephfus.co",
+    "url": "https://josephfus.co/"
+  },
+  "dependencies": {
+    "node-sass-chokidar": "^0.0.3",
+    "npm-run-all": "^4.1.1",
+    "react": "^16.0.0",
+    "react-dom": "^16.0.0",
+    "react-scripts": "1.0.14",
+    "react-validation": "^3.0.6"
+  },
+  "scripts": {
+    "deploy": "npm run build&&gh-pages -d build",
+    "build-css": "node-sass-chokidar --include-path ./src --include-path ./node_modules src/ -o src/",
+    "watch-css": "npm run build-css && node-sass-chokidar --include-path ./src --include-path ./node_modules src/ -o src/ --watch --recursive",
+    "start": "NODE_PATH=src react-scripts start",
+    "build": "NODE_PATH=src react-scripts build",
+    "test": "NODE_PATH=src react-scripts test --env=jsdom"
   },
   "devDependencies": {
-    "gulp": "^3.9.0",
-    "gulp-autoprefixer": "^3.1.1",
-    "gulp-clean-css": "^2.3.2",
-    "gulp-concat": "^2.6.0",
-    "gulp-rename": "^1.2.2",
-    "gulp-rev-append": "^0.1.8",
-    "gulp-sass": "^3.1.0",
-    "gulp-uglify": "^2.0.1",
-    "gulp-watch": "^4.3.5",
-    "pump": "^1.0.2"
+    "gh-pages": "^1.0.0"
   }
 }

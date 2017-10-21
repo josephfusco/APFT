@@ -1,0 +1,113 @@
+@import "styles/variables";
+@import "styles/mixins";
+@import "styles/placeholders";
+
+.ResultsDial {
+    @include make-room-for-sidebar;
+
+    .svg.radial-progress {
+        transform: rotate(270deg) rotateX(180deg); //Browser inconsistencies with negative stroke-dashoffset so we must flip the svg.
+        position: relative;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    svg {
+        height: 300px;
+        width: 300px;
+        max-width: 100%;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    circle {
+        stroke-width: 10px;
+        fill: transparent;
+    }
+
+    .radial-progress-background {
+        stroke: $color__secondary;
+    }
+
+    .radial-progress-cover {
+        will-change: stroke-dashoffset;
+        stroke: $color__primary-2;
+        stroke-width: 11px;
+        transition: .5s ease;
+    }
+
+    .radial-progress-center {
+        fill: $color__primary;
+    }
+
+    .radial-fill {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+    .dial-wrapper {
+        position: relative;
+        max-width: 300px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .score {
+        font-family: $font__monospace;
+        margin: 0;
+    }
+
+    .label {
+        margin: 0;
+        font-size: .8em;
+    }
+
+    .total-group {
+        padding-left: 15px;
+        padding-right: 15px;
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 20%;
+        text-align: center;
+        z-index: 1;
+
+        .score {
+            font-size: 5em;
+            color: lighten($color__label, 10%);
+        }
+
+    }
+
+    .score-group {
+        padding-left: 3em;
+        padding-right: 3em;
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 55%;
+        text-align: center;
+        z-index: 1;
+
+        .score {
+            font-size: 1.8em;
+        }
+
+        .columns {
+            display: flex;
+        }
+
+        .column {
+            flex: 1;
+            text-align: center;
+        }
+
+    }
+
+}
+
+
