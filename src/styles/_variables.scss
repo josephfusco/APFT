@@ -13,6 +13,7 @@ $color__primary-3: $mirage;
 $color__secondary: $reflective-yellow;
 $color__label: $gray;
 $color__label-on-primary-2: lighten($color__primary, 9%);
+$button-gradient: linear-gradient(to bottom, lighten($color__secondary, 12%) 0%, $color__secondary 70%);
 
 // Fonts
 $font__sans-serif: 'Overpass', sans-serif;
