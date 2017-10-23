@@ -7,7 +7,7 @@ class Sidebar extends React.Component {
         return(
             <aside className="Sidebar">
                 <fieldset>
-                    <legend>Age</legend>
+                    <legend>AGE</legend>
                     <div className="control">
                         <div className="age-group">
                             <input type='radio' id='apft_age_1' value="17-21"

@@ -5,6 +5,7 @@
 .Sidebar {
     background-color: $color__primary-2;
     width: $sidebar-width;
+
     @include is-xs {
         width: $sidebar-width-xs;
     }
@@ -34,6 +35,9 @@
             border-radius: 4px;
             font-family: $font__monospace;
             font-size: 1em;
+            @include is-xs {
+                font-size: .8em;
+            }
             cursor: pointer;
             height: 100%;
             width: 100%;
@@ -45,8 +49,7 @@
             color: $color__label-on-primary-2;
             -webkit-tap-highlight-color: transparent;
 
-            &:active {
-                transition: .2s;
+            @include hover {
                 background-color: $color__primary-3;
             }
 

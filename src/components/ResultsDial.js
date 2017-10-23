@@ -14,21 +14,21 @@ class ResultsDial extends React.Component {
                 <div className="container">
                     <div className="dial-wrapper">
                         <div className="total-group">
-                            <p className="label">Total</p>
+                            <p className="label">TOTAL POINTS</p>
                             <p className="score">{this.props.score.total}</p>
                         </div>
                         <div className="score-group">
                             <div className="columns">
                                 <div className="column">
-                                    <p className="label">Push-Ups</p>
+                                    <p className="label">PU</p>
                                     <p className="score">{this.props.score.pu}</p>
                                 </div>
                                 <div className="column">
-                                    <p className="label">Sit-Ups</p>
+                                    <p className="label">SU</p>
                                     <p className="score">{this.props.score.su}</p>
                                 </div>
                                 <div className="column">
-                                    <p className="label">Run</p>
+                                    <p className="label">2MR</p>
                                     <p className="score">{this.props.score.run}</p>
                                 </div>
                             </div>

@@ -7,19 +7,23 @@
     padding-bottom: 10px;
 
     .field {
-        margin-bottom: 15px;
+        margin-bottom: 29px;
     }
 
     .gender-control {
         display: flex;
         background-color: $color__primary-2;
-        box-shadow: inset 0 0 7px rgba(0,0,0,.2);
         border-radius: 4px;
         position: relative;
+        overflow: hidden;
     }
 
     .gender-group {
         flex: 1;
+        &:hover {
+            backface-visibility: hidden;
+            background-color: $color__primary-3;
+        }
 
         input[type="radio"] {
             @extend %screen-reader-text;

@@ -8,7 +8,7 @@ class Main extends React.Component {
             <main className="Main">
                 <div className="container">
                     <fieldset className="field">
-                        <legend className="label">Gender</legend>
+                        <legend className="label">GENDER</legend>
                         <div className="gender-control" data-gender={this.props.gender}>
                             <div className="active-gender-slider"></div>
                             <div className="gender-group">
@@ -26,13 +26,13 @@ class Main extends React.Component {
                         </div>
                     </fieldset>
                     <div className="field">
-                        <label className="label" htmlFor="apft_pu">Push-Ups</label>
+                        <label className="label" htmlFor="apft_pu">PUSH-UPS RAW SCORE</label>
                         <div className="control">
                             <input className="input" type="number" pattern="[0-9]*" min="0" inputMode="numeric" id="apft_pu" onChange={this.props.handleChange} placeholder="0" />
                         </div>
                     </div>
                     <div className="field">
-                        <label className="label" htmlFor="apft_su">Sit-Ups</label>
+                        <label className="label" htmlFor="apft_su">SIT-UPS RAW SCORE</label>
                         <div className="control">
                             <input className="input" type="number" pattern="[0-9]*" min="0" inputMode="numeric" id="apft_su" onChange={this.props.handleChange} placeholder="0" />
                         </div>
@@ -40,7 +40,7 @@ class Main extends React.Component {
                     <div className="columns">
                         <div className="column">
                             <div className="field">
-                                <label className="label" htmlFor="apft_min">Run Time</label>
+                                <label className="label" htmlFor="apft_min">2-MILE RUN RAW SCORE</label>
                                 <div className="control">
                                     <input className="input" type="number" pattern="[0-9]*" min="0" max="99" inputMode="numeric" id="apft_min" onChange={this.props.handleChange} placeholder="00" />
                                 </div>
