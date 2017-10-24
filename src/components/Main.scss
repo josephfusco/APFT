@@ -20,10 +20,6 @@
 
     .gender-group {
         flex: 1;
-        &:hover {
-            backface-visibility: hidden;
-            background-color: $color__primary-3;
-        }
 
         input[type="radio"] {
             @extend %screen-reader-text;
